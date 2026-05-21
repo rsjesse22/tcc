@@ -120,10 +120,10 @@ dados_finais = []
 textos_para_tfidf = []
 
 for i, noticia in enumerate(noticias):
-    print(f"[{i+1}/{len(noticias)}] Processando: {noticia.get('titulo', 'Sem título')[:50]}...")
+    print(f"[{i+1}/{len(noticias)}] Processando: {noticia.get('Título', 'Sem título')[:50]}...")
     
-    titulo = noticia.get('titulo', '')
-    descricao = noticia.get('subtitulo', '')
+    titulo = noticia.get('Título', '')
+    descricao = noticia.get('Resumo', '')
 
     # Junta título + subtítulo
     texto_completo = f"{titulo} {descricao}"
@@ -142,12 +142,12 @@ for i, noticia in enumerate(noticias):
     # Monta o objeto final da notícia
     noticia_enriquecida = {
         "id": i + 1,
-        "site": noticia.get("site"),
-        "data": noticia.get("data"),
+        "site": noticia.get("Portal"),
+        "data": noticia.get("Data"),
         "titulo_original": titulo,
         "subtitulo_original": descricao,
         "texto_original": texto_completo,
-        "url": noticia.get("url"),
+        "url": noticia.get("URL"),
         "pipeline_nlp": resultado_pipeline # Aqui estão todas as etapas salvas
     }
     
