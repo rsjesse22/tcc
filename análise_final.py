@@ -18,10 +18,14 @@ sentimento = pipeline(
 def analisar_sentimento(texto):
 
     resultado = sentimento(texto[:512])[0]
+    label = resultado['label'].lower()
+    score = resultado['score']
+    if 0.50 <= score <= 0.60:
+        label = 'neutral'
 
     return pd.Series([
-        resultado['label'],
-        resultado['score']
+        label,
+        score
     ])
 
 df[['sentimento', 'confianca']] = textos.apply(
