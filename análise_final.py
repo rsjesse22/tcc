@@ -3,7 +3,7 @@ from transformers import pipeline
 import matplotlib.pyplot as plt
 
 
-df = pd.read_csv(r'G:\Meu Drive\Tcc\dados\noticias_desastres_jp.csv')
+df = pd.read_csv(r'G:\Meu Drive\Tcc\dados\noticias_desastres.csv')
 
 textos = (
     df['Título'].astype(str) + ' ' +

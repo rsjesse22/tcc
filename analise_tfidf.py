@@ -5,7 +5,7 @@ from nltk.corpus import stopwords
 
 #TF-IDF para identificar termos mais relevantes em todos os títulos analisados.
 
-df = pd.read_csv(r'G:\Meu Drive\Tcc\dados\noticias_desastres_jp.csv')
+df = pd.read_csv(r'G:\Meu Drive\Tcc\dados\noticias_desastres.csv')
 print(df.columns)
 
 df.drop('Unnamed: 0', axis=1, inplace=True)

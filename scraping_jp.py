@@ -63,13 +63,13 @@ for pagina in range(1, 1000):
 
 df = pd.DataFrame(dados).drop_duplicates()
 
-df.to_csv("noticias_desastres_jp.csv", index=False, encoding="utf-8-sig")
+df.to_csv("noticias_desastres_jp_puro.csv", index=False, encoding="utf-8-sig")
 print("Finalizado! Total coletado:", len(df))
 
 
 
 # Carrega o CSV
-df = pd.read_csv("noticias_desastres_jp.csv")
+df = pd.read_csv("noticias_desastres_jp_puro.csv")
 
 descricoes = []
 
@@ -124,6 +124,6 @@ df["descricao"] = descricoes
 # Resultado
 print(df[["titulo", "descricao"]].head(5))
 
-df.to_csv("noticias_desastres_jp.csv", index=False, encoding="utf-8-sig")
+df.to_csv("noticias_desastres_jp_puro.csv", index=False, encoding="utf-8-sig")
 
 

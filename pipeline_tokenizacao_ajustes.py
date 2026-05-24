@@ -27,7 +27,7 @@ stemmer = RSLPStemmer()
 # ---------------------------------------------------------
 
 
-nome_arquivo_entrada = r"G:\Meu Drive\Tcc\dados\noticias_desastres_jp.csv"
+nome_arquivo_entrada = r"G:\Meu Drive\Tcc\dados\noticias_desastres.csv"
 
 try:
     df = pd.read_csv(nome_arquivo_entrada, encoding="utf-8")
